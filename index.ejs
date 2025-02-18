@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+ <html lang="en">
+     <head>
+        
+         <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+          <title>Employee Department Management</title> 
+          <link rel="stylesheet" href="/styles.css">
+          <link rel="stylesheet" href="https://th.bing.com/th/id/R.3938e0e2787cbf423ab5b52f29792bdf?rik=qji9xIGM2UZEFQ&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fdatabase-icons-download-248-free-database-icon-page-1-1113.png&ehk=8uSv1qR7vuw2WFFZ%2bpJm91aqdImDEAcCHequf8IcYVA%3d&risl=&pid=ImgRaw&r=0">
+         </head>
+          <body> 
+            <h1>InnovateCorp Employee Department Management</h1>
+             <table> 
+                <thead> <tr> 
+                    <th>Employee ID</th>
+                     <th>Name</th>
+                      <th>Department</th> 
+                      <th>Salary</th> 
+                      <th>Gender</th> 
+                      <th>Date of Joining</th>
+                     </tr> </thead>  <tbody>
+                         <% employees.forEach(employee => { %> <tr> 
+                            <td><%= employee.Empid %></td> 
+                            <td><%= employee.Name %></td>
+                             <td><%= employee.Department %></td> 
+                             <td>$<%= employee.Salary.toFixed(2) %></td> 
+                             <td><%= employee.Gender %></td>
+                              <td><%= employee.DOJ %></td> </tr>
+                              <% }) %>
+                            </tbody> 
+                        </table>
+                       
+                         <h2>Update Employee Department</h2>
+                          <form action="/update-department" method="POST"> 
+                            <label for="name">Employee Name:</label> 
+                            <input type="text" name="name" id="name" required>
+
+                            <label for="newdepartment">New Department:</label> 
+                            <input type="text" name="newdepartment" id="newdepartment" required> 
+
+                            <button type="submit">Update Department</button> 
+                        </form> 
+                    </body>
+                     </html>
